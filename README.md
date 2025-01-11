@@ -17,15 +17,15 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Sinks;
 ```
 # Sink
-	* sink - to create event source which can be subscribed
-	* sink.one - to emit only one event , we can use  event handler to constraint
-	* sink.many - to emit multiple events 
-	* sink.many.unicast -to emit multiple events to one subscriber - onBackPressureBuffer
-	* sink.many.multicast - to emit multiple events to multiple subscribers  - onBackPressureBuffer
-	* sink.many.multicast with directBestEffort - will send events to all and not sure delivered to all or not, which not makes other to wait
-	* sink.many.multicast with directAllOrNothing -  ensures all subscribers receives update or none.
-	* sink.many.replay - ensures new subscriber also gets all history of events, use limit(1) - will emit only last one history event
-	* sink.empty - for no data just complete or error
+	* Sinks - to create event source which can be subscribed
+	* Sinks.one - to emit only one event , we can use  event handler to constraint
+	* Sinks.many - to emit multiple events 
+	* Sinks.many.unicast -to emit multiple events to one subscriber - onBackPressureBuffer
+	* Sinks.many.multicast - to emit multiple events to multiple subscribers  - onBackPressureBuffer
+	* Sinks.many.multicast with directBestEffort - will send events to all and not sure delivered to all or not, which not makes other to wait
+	* Sinks.many.multicast with directAllOrNothing -  ensures all subscribers receives update or none.
+	* Sinks.many.replay - ensures new subscriber also gets all history of events, use limit(1) - will emit only last one history event
+	* Sinks.empty - for no data just complete or error
 
 ```Java
 @GetMapping(value = "/result", produces = MediaType.TEXT_EVENT_STREAM_VALUE) 

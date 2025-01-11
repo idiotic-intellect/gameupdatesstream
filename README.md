@@ -38,3 +38,25 @@ To tell this emits Server Sent Events
 
 # Additional types
 	* Tuple - used to store items of different types from 1 to 10 using of(...args) method and its immutable
+
+# Working - local running
+Open Postman or any webclient after starting project create request as below
+
+```HTTP POST Request
+POST
+URL: http://localhost:8080/api/match/update
+body: {
+			"team1": 1 <int>,
+			"team2": 2 <int>,
+			"commentry": "Some message" <String>
+		}
+```
+Open browser with below URL
+
+```HTTP GET Request
+GET
+URL: http://localhost:8080/api/match/stream
+```
+	
+
+	

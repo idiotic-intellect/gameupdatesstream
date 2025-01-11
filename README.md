@@ -16,6 +16,23 @@ Check in https://mvnrepository.com/ => spring-boot-starter-webflux
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Sinks;
 ```
+
+#Code
+
+Emit events
+
+```
+Sink.One<Type> oneEmitVar = Sinks.one();
+Sinks.Many<Type> manyEmitVar = Sinks.many().replay().limit(1);
+```
+
+Subscribe events
+
+```
+Mono<Type> oneSubsVar = sink.asMono().cache(num);
+Flux<Type> manySubsVar = manyEmitVar.asFlux().cache(num);
+```
+
 # Sink
 	* Sinks - to create event source which can be subscribed
 	* Sinks.one - to emit only one event , we can use  event handler to constraint
